@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    databa se: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:mysql://localhost/Colegio?createDatabaseIfNotExist=true
+    username : root
+    password: 1234
+server:
+  port: 8080
