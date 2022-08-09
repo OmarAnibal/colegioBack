@@ -3,6 +3,7 @@ package com.aniguio.colegio.api;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,6 +31,7 @@ public class MunicipioRest {
 	public List<Municipio> listarPorDepartamentoId(@PathVariable int id){
 		return service.listarPorDepartamentoId(id);
 	}
+	
 	
 	
 	

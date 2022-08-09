@@ -28,6 +28,7 @@ public class TipoIdentificacionRest {
 
 	@GetMapping("")
 	public List<TipoIdentificacion> listarTodos() {
+		System.out.println(service.listarTodos());
 		return service.listarTodos();
 	}
 	

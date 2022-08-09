@@ -9,7 +9,7 @@ import com.aniguio.colegio.model.Departamento;
 import com.aniguio.colegio.model.Municipio;
 
 @Repository
-public interface IMunicipioRepository extends JpaRepository<Municipio, Integer> {
+public interface IMunicipioRepository extends IGenericRepo<Municipio, Integer> {
 
 	public List<Municipio> findByDepartamento(Departamento departamento);
 	

@@ -13,25 +13,30 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table (name = "municipio")
-public class Municipio {
+@Table(name="marcas")
+public class Marca {
 
 	
-
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column(name="mun_id")
+	@Column(name="id_marca")
 	private int id;
 	
-	@ManyToOne
-	@JoinColumn(name = "dep_id", nullable = false)
-	private Departamento departamento;
-	
-	@Column(name = "mun_nombre", nullable = false) 
+	@Column(name="nombres")
 	private String nombre;
 	
+	@Column(name="descripcion")
+	private String descripcion;
 	
-
+	@ManyToOne
+	@JoinColumn(name= "persona_id")
+	private Persona persona;
 	
 	
+	
+	
+	
+	
+	
+		
 }

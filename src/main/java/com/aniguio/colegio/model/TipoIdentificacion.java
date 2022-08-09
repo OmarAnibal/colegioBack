@@ -9,6 +9,8 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
+
+
 @Data
 @Entity
 @Table(name = "tipo_identificacion")
@@ -25,5 +27,6 @@ public class TipoIdentificacion {
 	
 	@Column(name = "ti_descripcion", nullable = false)
 	private String descripcion;
+
 	
 }

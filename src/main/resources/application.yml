@@ -5,7 +5,7 @@ spring:
     hibernate:
       ddl-auto: none
   datasource:
-    url: jdbc:mysql://localhost/Colegio?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost/colegio?createDatabaseIfNotExist=true
     username : root
     password: 1234
 server:

@@ -3,6 +3,8 @@ package com.aniguio.colegio.api;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,23 +27,27 @@ public class PersonaRest {
 	private IPersonaService service;
 
 	@GetMapping("")
-	public List<Persona> listarTodos() {
-		return service.listarTodos();
+	public ResponseEntity<List<Persona>> listarTodos() {
+		List<Persona> lista = service.listarTodos();
+		return new ResponseEntity<List<Persona>>(lista, HttpStatus.OK);
 	}
 	
 	@GetMapping("{id}")
-	public Persona listarPorId(@PathVariable int id) {
-		return service.listarPorId(id);
+	public ResponseEntity<Persona> listarPorId(@PathVariable("id") Integer id) {
+		Persona per = service.listarPorId(id);
+		return new ResponseEntity<Persona>(per, HttpStatus.OK);
 	}
 	
-	@PostMapping("")
-	public void registrar(@RequestBody Persona entidad) {
-		service.registrar(entidad);
+	@PostMapping
+	public ResponseEntity<String> registrar(@RequestBody Persona p){
+		service.registrar(p);
+		return new ResponseEntity<String>("**", HttpStatus.CREATED);
 	}
 	
 	@PutMapping("")
-	public void actualizar(@RequestBody Persona entidad) {
-		service.actualizar(entidad);
+	public ResponseEntity<String> actualizar(@RequestBody Persona p) {
+		service.actualizar(p);
+		return new ResponseEntity<String>("**", HttpStatus.ACCEPTED);
 	}
 
 	@DeleteMapping("{id}")

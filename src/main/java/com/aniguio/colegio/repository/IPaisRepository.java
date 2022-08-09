@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.aniguio.colegio.model.Pais;
 
 @Repository
-public interface IPaisRepository extends JpaRepository<Pais, Integer>  {
+public interface IPaisRepository extends IGenericRepo<Pais, Integer>  {
 
 }

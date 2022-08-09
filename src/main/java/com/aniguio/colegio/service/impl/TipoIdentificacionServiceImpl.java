@@ -17,7 +17,7 @@ public class TipoIdentificacionServiceImpl implements ITipoIdentificacionService
 
 	@Override
 	public List<TipoIdentificacion> listarTodos() {
-
+		List<TipoIdentificacion> lista = repo.findAll();
 		return repo.findAll();
 	}
 
